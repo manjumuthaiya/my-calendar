@@ -1,0 +1,74 @@
+@import 'base';
+@import 'colors';
+@import "~bootstrap/scss/bootstrap.scss";
+$fa-font-path:"~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+@import '~react-day-picker/lib/style.css';
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $light-gray;
+}
+
+.app__navbar {
+  background-color: $black;
+  a {
+    color: $darker-gray;
+  }
+}
+
+.icon-calendar {
+  @extend .fa;
+  @extend .fa-calendar;
+}
+
+.icon-tag {
+  @extend .fa;
+  @extend .fa-tags;
+}
+
+.icon-trash {
+  @extend .fa;
+  @extend .fa-trash-o;
+}
+
+.calendar__container {
+  margin: 0 auto;
+  width: 25%;
+}
+
+.events__container {
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 40%;
+  color: $darkest-gray;
+}
+
+.events__title {
+  text-decoration: underline;
+}
+
+.event__container {
+  border: 1px solid black;
+}
+
+.event__date {
+
+}
