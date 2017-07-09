@@ -5,6 +5,7 @@ import React from 'react';
 import Nav from './Nav';
 import Calendar from './Calendar';
 import Events from './Events';
+import MakeAppointmentButton from './MakeAppointmentButton';
 
 class App extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
         <Nav />
         <Calendar />
         <Events />
+        <MakeAppointmentButton />
       </div>
     );
   }

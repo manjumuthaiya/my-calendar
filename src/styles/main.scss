@@ -68,6 +68,7 @@ body {
 .event__container {
   border: 1px solid $darker-gray;
   margin-top: 20px;
+  margin-bottom: 25px;
 }
 
 .event__date {
@@ -114,5 +115,14 @@ body {
   position: relative;
   left: 90%;
   font-size: 0.4rem;
+}
+
+.make-appointment-button {
+  margin: 0 auto;
+  width: 20%;
+  button {
+    background-color: $orange;
+    color: $white;
+  }
 }
 
