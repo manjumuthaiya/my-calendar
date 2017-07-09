@@ -57,7 +57,7 @@ body {
 .events__container {
   margin: 0 auto;
   padding-top: 50px;
-  width: 40%;
+  width: 35%;
   color: $darkest-gray;
 }
 
@@ -66,9 +66,53 @@ body {
 }
 
 .event__container {
-  border: 1px solid black;
+  border: 1px solid $darker-gray;
+  margin-top: 20px;
 }
 
 .event__date {
-
+  display: inline-block;
+  width: 15%;
+  margin: 10px;
 }
+
+.event__date--month {
+}
+
+.event__date--day {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: $black;
+}
+
+.event__body {
+  display: inline-block;
+  width: 70%;
+}
+
+.event__title {
+  color: $orange;
+}
+
+.event__details {
+  margin-top: 10px;
+  font-size: 0.7rem;
+}
+
+.event__delete-button {
+  display: inline-block;
+  width: 10%;
+  padding-left: 20px;
+  vertical-align: top;
+  a {
+    color: $darkest-gray;
+  }
+}
+
+.event__tag {
+  width: 10%;
+  position: relative;
+  left: 90%;
+  font-size: 0.4rem;
+}
+
