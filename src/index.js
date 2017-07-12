@@ -3,8 +3,17 @@
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import { Provider } from 'react-redux';
 import 'bootstrap';
+import App from './components/App.jsx';
 
+import configureStore from './configureStore';
 require('./styles/main.scss');
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const store = configureStore({ events: []});
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
