@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import { call } from 'redux-saga/effects';
 
 // Initialize Firebase
 var config = {
@@ -15,9 +16,19 @@ const database = firebase.database();
 
 function addNewEvent(item) {
   const newItemRef = database.ref('events').push();
-  return newItemRef.set(item);
+  return newItemRef.set({
+    ...item,
+    id: newItemRef.key,
+  });
+}
+
+function* fetchEvents() {
+  const ref = database.ref('events');
+  const data = yield call([ref, ref.once], 'value');
+  return data.val();
 }
 
 export default {
   addNewEvent,
+  fetchEvents,
 };

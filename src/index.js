@@ -4,13 +4,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
 import 'bootstrap';
 import App from './components/App.jsx';
 
 import configureStore from './configureStore';
 require('./styles/main.scss');
 
-const store = configureStore({ events: []});
+const store = configureStore({ events: {}});
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
