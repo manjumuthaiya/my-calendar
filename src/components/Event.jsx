@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-function Event() {
+function Event({ event }) {
+  console.log("Event", event);
   return (
     <div className="event__container">
       <div className="event__date">
@@ -27,7 +28,7 @@ function Event() {
 }
 
 Event.propTypes = {
-
+  event: PropTypes.object
 };
 
 export default Event;
