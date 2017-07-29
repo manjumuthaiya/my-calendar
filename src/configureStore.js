@@ -4,7 +4,7 @@ import reducer from './reducers';
 import rootSaga from './sagas';
 
 
-export default function configureStore(initialState) {
+export default function configureStore() {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(
     reducer,

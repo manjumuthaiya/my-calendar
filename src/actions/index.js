@@ -3,6 +3,7 @@ import {
   LOAD_EVENTS,
   OPEN_MODAL,
   CLOSE_MODAL,
+  SELECT_DATE,
 } from '../constants/actionTypes';
 
 function fetchEvents() {
@@ -30,9 +31,17 @@ function closeModal() {
   };
 }
 
+function selectDate(data) {
+  return {
+    type: SELECT_DATE,
+    data
+  }
+}
+
 export {
   fetchEvents,
   loadEvents,
   openModal,
   closeModal,
+  selectDate,
 };

@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { openModal } from '../actions';
 
-function MakeAppointmentButton({ onClick }) {
+function MakeAppointmentButton({ openModal }) {
   return (
     <div className="make-appointment-button">
       <button
         type="button"
         className="btn"
-        onClick={onClick}
+        onClick={openModal}
       >
         Make new appointment
       </button>
@@ -16,7 +19,12 @@ function MakeAppointmentButton({ onClick }) {
 }
 
 MakeAppointmentButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
-export default MakeAppointmentButton;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    openModal,
+  }, dispatch);
+}
+export default connect(null, mapDispatchToProps)(MakeAppointmentButton);

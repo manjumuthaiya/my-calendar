@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
-import { fetchEvents, openModal, closeModal } from '../actions';
+import { fetchEvents } from '../actions';
 import Nav from './Nav';
 import Calendar from './Calendar';
 import Events from './Events';
@@ -30,10 +30,8 @@ class App extends React.Component {
         <Nav />
         <Calendar />
         <Events />
-        <MakeAppointmentButton onClick={this.props.openModal} />
-        <MakeAppointmentModal
-          isOpen={this.props.isModalOpen}
-          closeModal={this.props.closeModal} />
+        <MakeAppointmentButton />
+        <MakeAppointmentModal />
       </div>
     );
   }
@@ -41,24 +39,15 @@ class App extends React.Component {
 
 App.propTypes = {
   fetchEvents: PropTypes.func.isRequired,
-  openModal: PropTypes.func.isRequired,
 };
-
-function mapStateToProps(state) {
-  return {
-    isModalOpen: _.get(state, 'modal.isOpen'),
-  };
-}
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     fetchEvents,
-    openModal,
-    closeModal,
   }, dispatch);
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(App);
