@@ -1,6 +1,8 @@
 import {
   FETCH_EVENTS,
   LOAD_EVENTS,
+  OPEN_MODAL,
+  CLOSE_MODAL,
 } from '../constants/actionTypes';
 
 function fetchEvents() {
@@ -16,7 +18,21 @@ function loadEvents(data) {
   };
 }
 
+function openModal() {
+  return {
+    type: OPEN_MODAL,
+  };
+}
+
+function closeModal() {
+  return {
+    type: CLOSE_MODAL,
+  };
+}
+
 export {
   fetchEvents,
-  loadEvents
+  loadEvents,
+  openModal,
+  closeModal,
 };

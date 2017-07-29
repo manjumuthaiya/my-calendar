@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function MakeAppointmentButton() {
+function MakeAppointmentButton({ onClick }) {
   return (
     <div className="make-appointment-button">
       <button
         type="button"
         className="btn"
+        onClick={onClick}
       >
         Make new appointment
       </button>
@@ -14,7 +16,7 @@ function MakeAppointmentButton() {
 }
 
 MakeAppointmentButton.propTypes = {
-
+  onClick: PropTypes.func.isRequired,
 };
 
 export default MakeAppointmentButton;

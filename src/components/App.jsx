@@ -1,14 +1,19 @@
 /*
     ./src/components/App.jsx
 */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchEvents } from '../actions';
+import _ from 'lodash';
+
+import { fetchEvents, openModal, closeModal } from '../actions';
 import Nav from './Nav';
 import Calendar from './Calendar';
 import Events from './Events';
 import MakeAppointmentButton from './MakeAppointmentButton';
+import MakeAppointmentModal from './MakeAppointmentModal';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +30,10 @@ class App extends React.Component {
         <Nav />
         <Calendar />
         <Events />
-        <MakeAppointmentButton />
+        <MakeAppointmentButton onClick={this.props.openModal} />
+        <MakeAppointmentModal
+          isOpen={this.props.isModalOpen}
+          closeModal={this.props.closeModal} />
       </div>
     );
   }
@@ -33,16 +41,24 @@ class App extends React.Component {
 
 App.propTypes = {
   fetchEvents: PropTypes.func.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
+function mapStateToProps(state) {
+  return {
+    isModalOpen: _.get(state, 'modal.isOpen'),
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     fetchEvents,
+    openModal,
+    closeModal,
   }, dispatch);
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);
