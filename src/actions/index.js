@@ -4,6 +4,7 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
   SELECT_DATE,
+  ADD_EVENT,
 } from '../constants/actionTypes';
 
 function fetchEvents() {
@@ -38,10 +39,18 @@ function selectDate(data) {
   }
 }
 
+function addEvent(data) {
+  return {
+    type: ADD_EVENT,
+    data,
+  };
+}
+
 export {
   fetchEvents,
   loadEvents,
   openModal,
   closeModal,
   selectDate,
+  addEvent,
 };
