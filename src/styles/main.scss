@@ -49,6 +49,17 @@ body {
   @extend .fa-trash-o;
 }
 
+.icon-close {
+  @extend .fa;
+  @extend .fa-times;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
 .calendar__container {
   margin: 0 auto;
   width: 25%;
@@ -120,6 +131,93 @@ body {
 .make-appointment-button {
   margin: 0 auto;
   width: 20%;
+  button {
+    background-color: $orange;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+.make-appointment-form__container {
+  margin-top:20px;
+}
+
+.make-appointment-form__label {
+  margin: 0 auto;
+  width: 20%;
+  padding-bottom: 10px;
+}
+
+.make-appointment-form__field {
+  margin: 0 auto;
+  width: 30%;
+  padding-bottom: 15px;
+}
+
+.make-appointment-form__field--what {
+  margin: 0 auto;
+  width: 42%;
+  padding-bottom: 15px;
+
+  input {
+    width: 66%;
+    display: inline-block;
+  }
+  select {
+    margin-left: 10px;
+    width: 30%;
+    display: inline-block;
+  }
+}
+
+.make-appointment-form__field--where {
+  margin: 0 auto;
+  width: 42%;
+  padding-bottom: 15px;
+
+  input {
+    width: 100%;
+  }
+}
+
+.make-appointment-form__time-labels{
+  margin: 0 auto;
+  width: 70%;
+  padding-bottom: 10px;
+}
+
+.make-appointment-form__time-fields{
+  margin: 0 auto;
+  width: 80%;
+  padding-bottom: 10px;
+}
+
+.make-appointment-form__start--label {
+  display: inline-block;
+  width: 50%;
+}
+
+.make-appointment-form__start--field {
+  display: inline-block;
+  width:50%;
+}
+
+.make-appointment-form__end--label {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+.make-appointment-form__end--field {
+  display: inline-block;
+  width: 50%;
+  text-align:center;
+}
+
+.make-appointment-form__button {
+  margin: 0 auto;
+  width: 28%;
+  margin-top: 50px;
   button {
     background-color: $orange;
     color: $white;

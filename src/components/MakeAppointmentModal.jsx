@@ -5,15 +5,24 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { closeModal } from '../actions';
+import MakeAppointmentForm from './MakeAppointmentForm';
 
 function MakeAppointmentModal({ isOpen, closeModal }) {
+  const styles = {
+    content: {
+      borderRadius: '15px',
+      width: '50%',
+      margin: '0 auto',
+    },
+  };
   return (
     <Modal
       isOpen={isOpen}
       contentLabel="Make appointment"
+      style={styles}
     >
-      Hello modal
-      <button onClick={closeModal}>Close</button>
+      <button onClick={closeModal} className="icon-close pull-right"></button>
+      <MakeAppointmentForm />
     </Modal>
   );
 }
