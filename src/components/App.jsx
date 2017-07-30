@@ -15,7 +15,7 @@ import Events from './Events';
 import MakeAppointmentButton from './MakeAppointmentButton';
 import MakeAppointmentModal from './MakeAppointmentModal';
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props);
   }

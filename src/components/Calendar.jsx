@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import _ from 'lodash';
 import DayPicker from 'react-day-picker';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
