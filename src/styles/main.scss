@@ -47,11 +47,16 @@ body {
 .icon-trash {
   @extend .fa;
   @extend .fa-trash-o;
+  @extend .icon-button;
 }
 
 .icon-close {
   @extend .fa;
   @extend .fa-times;
+  @extend .icon-button;
+}
+
+.icon-button {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;

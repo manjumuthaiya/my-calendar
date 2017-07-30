@@ -23,6 +23,11 @@ function addNewEvent(item) {
   });
 }
 
+function* deleteEvent(id) {
+  const eventRef = database.ref(`events/${id}`);
+  yield call([eventRef, eventRef.remove]);
+}
+
 function* fetchEvents() {
   const ref = database.ref('events');
   const data = yield call([ref, ref.once], 'value');
@@ -32,4 +37,5 @@ function* fetchEvents() {
 export default {
   addNewEvent,
   fetchEvents,
+  deleteEvent,
 };

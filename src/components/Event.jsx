@@ -1,9 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import { getMonth, getDate } from '../utils/dateUtils';
+import * as actions from '../actions';
 
-function Event({ event }) {
+
+export function Event({ event, deleteEvent }) {
+  function onDeleteClick() {
+    console.log("onDeleteClick")
+    deleteEvent(event.id);
+  }
   console.log("Event", event);
   return (
     <div className="event__container">
@@ -21,7 +29,7 @@ function Event({ event }) {
         </div>
       </div>
       <div className="event__delete-button">
-        <a href="#"><i className="icon-trash" /></a>
+        <button onClick={onDeleteClick} className="icon-trash" ></button>
       </div>
       <div className="event__tag">
         <i className="icon-tag" /> {event.tag}
@@ -31,7 +39,13 @@ function Event({ event }) {
 }
 
 Event.propTypes = {
-  event: PropTypes.object
+  event: PropTypes.object.isRequired,
+  deleteEvent: PropTypes.func.isRequired,
 };
 
-export default Event;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    deleteEvent: actions.deleteEvent,
+  }, dispatch);
+}
+export default connect(null, mapDispatchToProps)(Event);
