@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import Event from './Event';
@@ -19,6 +19,7 @@ function buildEventsNodes(events) {
 }
 
 function Events({ events}) {
+  console.log("events render")
   return (
     <div className="events__container">
       <div className="events__title">
@@ -41,6 +42,6 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps
-)(Events);
+)(Events));

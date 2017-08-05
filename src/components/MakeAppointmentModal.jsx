@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import _ from 'lodash';
+import { withRouter } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { closeModal } from '../actions';
@@ -43,4 +45,4 @@ function mapDispatchToProps(dispatch) {
     closeModal,
   }, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps)(MakeAppointmentModal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MakeAppointmentModal));

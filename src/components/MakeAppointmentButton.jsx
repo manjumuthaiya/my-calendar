@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import { bindActionCreators } from 'redux';
 import { openModal } from '../actions';
 
@@ -27,4 +29,4 @@ function mapDispatchToProps(dispatch) {
     openModal,
   }, dispatch);
 }
-export default connect(null, mapDispatchToProps)(MakeAppointmentButton);
+export default withRouter(connect(null, mapDispatchToProps)(MakeAppointmentButton));

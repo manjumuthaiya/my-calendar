@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 import { getMonth, getDate } from '../utils/dateUtils';
 import * as actions from '../actions';
@@ -48,4 +49,4 @@ function mapDispatchToProps(dispatch) {
     deleteEvent: actions.deleteEvent,
   }, dispatch);
 }
-export default connect(null, mapDispatchToProps)(Event);
+export default withRouter(connect(null, mapDispatchToProps)(Event));

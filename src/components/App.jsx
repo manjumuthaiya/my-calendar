@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
 import _ from 'lodash';
+import { withRouter } from 'react-router-dom';
 
 import { fetchEvents } from '../actions';
 import Nav from './Nav';
@@ -29,7 +31,11 @@ export class App extends React.Component {
       <div>
         <Nav />
         <Calendar />
-        <Events />
+        <Switch>
+          <Route exact path='/' component={Events} onEnter={() => console.log('enter /')}/>
+          <Route path='/work' component={Events} onEnter={() => console.log('enter /work')}/>
+          <Route path='/personal' component={Events} onEnter={() => console.log('enter /personal')}/>
+        </Switch>
         <MakeAppointmentButton />
         <MakeAppointmentModal />
       </div>
@@ -47,7 +53,7 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(
+export default withRouter(connect(
   null,
   mapDispatchToProps
-)(App);
+)(App));

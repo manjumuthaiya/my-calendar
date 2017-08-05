@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Nav extends React.Component {
   render() {
@@ -12,10 +13,10 @@ class Nav extends React.Component {
           data-target="#navbarSupportedContent">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <a className="navbar-brand app-logo" href="#">My Calendar <i className="icon-calendar" aria-hidden="true"></i></a>
-         <a className="nav-link" href="#">All</a>
-          <a className="nav-link" href="#">Work</a>
-           <a className="nav-link" href="#">Personal</a>
+        <Link className="navbar-brand app-logo" to="#">My Calendar <i className="icon-calendar" aria-hidden="true"></i></Link>
+          <Link className="nav-link" to="/">All</Link>
+          <Link className="nav-link" to="/work">Work</Link>
+          <Link className="nav-link" to="/personal">Personal</Link>
       </nav>
     );
   }
