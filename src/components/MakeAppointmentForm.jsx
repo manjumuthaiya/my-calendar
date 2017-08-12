@@ -6,12 +6,14 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions';
+import { formatDate } from '../utils/dateUtils';
+
 
 export class MakeAppointmentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: '',
+      date: formatDate(this.props.selectedDate) || '',
       title: '',
       tag: 'work',
       location: '',
@@ -128,7 +130,7 @@ export class MakeAppointmentForm extends React.Component {
 }
 
 MakeAppointmentForm.propTypes = {
-  selectedDate: PropTypes.string,
+  selectedDate: PropTypes.object,
   addEvent: PropTypes.func.isRequired,
 };
 

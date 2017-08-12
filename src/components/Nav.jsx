@@ -3,6 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Nav extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <nav className="navbar navbar-toggleable-md bg-faded app__navbar">
@@ -15,11 +19,10 @@ class Nav extends React.Component {
         </button>
         <Link className="navbar-brand app-logo" to="#">My Calendar <i className="icon-calendar" aria-hidden="true"></i></Link>
           <Link className="nav-link" to="/">All</Link>
-          <Link className="nav-link" to="/work">Work</Link>
-          <Link className="nav-link" to="/personal">Personal</Link>
+          <Link className="nav-link" to="#work">Work</Link>
+          <Link className="nav-link" to="#personal">Personal</Link>
       </nav>
     );
   }
 }
-
 export default Nav;

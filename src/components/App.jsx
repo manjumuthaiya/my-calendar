@@ -10,7 +10,7 @@ import { Switch, Route } from 'react-router-dom';
 import _ from 'lodash';
 import { withRouter } from 'react-router-dom';
 
-import { fetchEvents } from '../actions';
+import { fetchEvents, fetchEventsWithTag } from '../actions';
 import Nav from './Nav';
 import Calendar from './Calendar';
 import Events from './Events';
@@ -26,6 +26,18 @@ export class App extends React.Component {
     this.props.fetchEvents();
   }
 
+  componentWillUpdate(nextProps, nextState) {
+    const hash = nextProps.location.hash;
+    if (hash !== this.props.location.hash) {
+      if (hash) {
+        const tag = hash.split('#')[1];
+        this.props.fetchEventsWithTag(tag);
+      } else {
+        this.props.fetchEvents();
+      }
+    }
+  }
+
   render() {
     return (
       <div>
@@ -33,8 +45,8 @@ export class App extends React.Component {
         <Calendar />
         <Switch>
           <Route exact path='/' component={Events} onEnter={() => console.log('enter /')}/>
-          <Route path='/work' component={Events} onEnter={() => console.log('enter /work')}/>
-          <Route path='/personal' component={Events} onEnter={() => console.log('enter /personal')}/>
+          <Route path='#work' component={Events} onEnter={() => console.log('enter /work')}/>
+          <Route path='#personal' component={Events} onEnter={() => console.log('enter /personal')}/>
         </Switch>
         <MakeAppointmentButton />
         <MakeAppointmentModal />
@@ -50,6 +62,7 @@ App.propTypes = {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     fetchEvents,
+    fetchEventsWithTag,
   }, dispatch);
 }
 

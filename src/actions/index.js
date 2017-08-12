@@ -6,6 +6,7 @@ import {
   SELECT_DATE,
   ADD_EVENT,
   DELETE_EVENT,
+  FETCH_EVENTS_WITH_TAG
 } from '../constants/actionTypes';
 
 function fetchEvents() {
@@ -54,6 +55,13 @@ function deleteEvent(data) {
   }
 }
 
+function fetchEventsWithTag(data) {
+  return {
+    type: FETCH_EVENTS_WITH_TAG,
+    data,
+  }
+}
+
 export {
   fetchEvents,
   loadEvents,
@@ -62,4 +70,5 @@ export {
   selectDate,
   addEvent,
   deleteEvent,
+  fetchEventsWithTag
 };

@@ -6,7 +6,6 @@ import { closeModal, fetchEvents } from '../actions';
 
 export function* addEvent(action) {
   try {
-    console.log("Going to call api", action)
     const events = yield call([api, api.addNewEvent], action.data);
 
     yield put(closeModal());

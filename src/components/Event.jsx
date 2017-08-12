@@ -10,10 +10,8 @@ import * as actions from '../actions';
 
 export function Event({ event, deleteEvent }) {
   function onDeleteClick() {
-    console.log("onDeleteClick")
     deleteEvent(event.id);
   }
-  console.log("Event", event);
   return (
     <div className="event__container">
       <div className="event__date">

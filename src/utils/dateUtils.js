@@ -12,8 +12,13 @@ function isPastDay(day) {
   return moment(day).isBefore(moment());
 }
 
+function formatDate(date) {
+  return moment(date).format('YYYY-MM-DD');
+}
+
 export {
   getMonth,
   getDate,
   isPastDay,
+  formatDate,
 };

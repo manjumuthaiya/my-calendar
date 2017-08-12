@@ -18,8 +18,7 @@ function buildEventsNodes(events) {
   return _.map(events, (event) => buildEventNode(event));
 }
 
-function Events({ events}) {
-  console.log("events render")
+function Events({ events, location}) {
   return (
     <div className="events__container">
       <div className="events__title">

@@ -6,7 +6,6 @@ import { closeModal, fetchEvents } from '../actions';
 
 export function* deleteEvent(action) {
   try {
-    console.log("Going to call api", action)
     const events = yield call([api, api.deleteEvent], action.data);
 
     yield put(fetchEvents());
