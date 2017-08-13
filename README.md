@@ -6,4 +6,8 @@ Personal calendar app with ability to make personal and work appointments
 1. `npm install` or `yarn install`
 2. `npm start`
 
+## Screenshot
+
+![Screenshot](screenshot.png?raw=true "Screenshot")
+
 
