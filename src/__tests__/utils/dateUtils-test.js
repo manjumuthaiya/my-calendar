@@ -35,4 +35,11 @@ describe('date utils', function () {
       expect(dateUtils.isPastDay(day)).to.equal(false);
     });
   });
+
+  describe('formatDate', function () {
+    it('returns formatted date string', function () {
+      const date = moment(new Date('2014/4/15'));
+      expect(dateUtils.formatDate(date)).to.equal('2014-04-15');
+    });
+  });
 });

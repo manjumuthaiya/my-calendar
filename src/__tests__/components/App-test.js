@@ -4,6 +4,7 @@ import { shallow, mount } from 'enzyme';
 import chaiEnzyme from 'chai-enzyme';
 import sinon from 'sinon';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom'
 
 const expect = chai.expect;
 chai.use(chaiEnzyme());
@@ -35,7 +36,9 @@ describe('App', function () {
     };
     mount(
       <Provider store={store}>
-        <App fetchEvents={fetchEvents} />
+        <BrowserRouter>
+          <App fetchEvents={fetchEvents} />
+        </BrowserRouter>
       </Provider>);
     expect(fetchEvents.called).to.equal(true);
   });
