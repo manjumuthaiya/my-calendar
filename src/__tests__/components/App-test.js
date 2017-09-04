@@ -4,18 +4,18 @@ import { shallow, mount } from 'enzyme';
 import chaiEnzyme from 'chai-enzyme';
 import sinon from 'sinon';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
 const expect = chai.expect;
 chai.use(chaiEnzyme());
 
 import { App } from '../../components/App';
 
-describe('App', function () {
+describe('App', () => {
   let component;
   let fetchEvents;
 
-  beforeEach(function () {
+  beforeEach(() => {
     fetchEvents = sinon.spy();
 
     component = shallow(
@@ -25,14 +25,15 @@ describe('App', function () {
     );
   });
 
-  it('renders', function () {
+  it('renders', () => {
     expect(component).to.be.present();
   });
 
-  it('calls fetchEvents when mounted', function () {
+  it('calls fetchEvents when mounted', () => {
     const store = {
       getState: () => { return {}; },
-      subscribe: () => {}
+      subscribe: () => {},
+      dispatch: () => {},
     };
     mount(
       <Provider store={store}>

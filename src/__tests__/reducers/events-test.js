@@ -5,13 +5,13 @@ import {
 } from '../../constants/actionTypes';
 import events from '../../reducers/events';
 
-describe('events reducer', function () {
+describe('events reducer', () => {
 
-  it('sets default initial state', function () {
+  it('sets default initial state', () => {
     expect(events(undefined, undefined)).to.deep.equal({});
   });
 
-  it('handles LOAD_EVENTS action', function () {
+  it('handles LOAD_EVENTS action', () => {
     const action = {
       type: LOAD_EVENTS,
       data: { foo: 'bar' },

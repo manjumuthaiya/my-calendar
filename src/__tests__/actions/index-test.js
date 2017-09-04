@@ -8,10 +8,10 @@ import {
   SELECT_DATE,
 } from '../../constants/actionTypes';
 
-describe('actions', function () {
+describe('actions', () => {
 
-  describe('fetchEvents', function () {
-    it('returns an action object for fetching events', function () {
+  describe('fetchEvents', () => {
+    it('returns an action object for fetching events', () => {
       const expected = {
         type: FETCH_EVENTS,
       };
@@ -19,8 +19,8 @@ describe('actions', function () {
     });
   });
 
-  describe('loadEvents', function () {
-    it('returns an action object for loading events', function () {
+  describe('loadEvents', () => {
+    it('returns an action object for loading events', () => {
       const data = { foo: 'bar' };
       const expected = {
         type: LOAD_EVENTS,
@@ -30,8 +30,8 @@ describe('actions', function () {
     });
   });
 
-  describe('openModal', function () {
-    it('returns an action object for opening modal', function () {
+  describe('openModal', () => {
+    it('returns an action object for opening modal', () => {
       const expected = {
         type: OPEN_MODAL,
       };
@@ -39,8 +39,8 @@ describe('actions', function () {
     });
   });
 
-  describe('closeModal', function () {
-    it('returns an action object for closing modal', function () {
+  describe('closeModal', () => {
+    it('returns an action object for closing modal', () => {
       const expected = {
         type: CLOSE_MODAL,
       };
@@ -48,8 +48,8 @@ describe('actions', function () {
     });
   });
 
-  describe('selectDate', function () {
-    it('returns an action object for selecting date', function () {
+  describe('selectDate', () => {
+    it('returns an action object for selecting date', () => {
       const data = '2017/8/9';
       const expected = {
         type: SELECT_DATE,
