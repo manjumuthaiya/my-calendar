@@ -13,7 +13,7 @@ function disableDay(day) {
   return isPastDay(day);
 }
 
-function Calendar({ selectDate, selectedDate }) {
+export function Calendar({ selectDate, selectedDate }) {
   return (
     <div className="calendar__container">
       <DayPicker
