@@ -28,7 +28,7 @@ export function Event({ event, deleteEvent }) {
         </div>
       </div>
       <div className="event__delete-button">
-        <button onClick={onDeleteClick} className="icon-trash" ></button>
+        <button onClick={onDeleteClick} className="icon-trash" data-test-handle="delete-event"></button>
       </div>
       <div className="event__tag">
         <i className="icon-tag" /> {event.tag}
@@ -38,7 +38,14 @@ export function Event({ event, deleteEvent }) {
 }
 
 Event.propTypes = {
-  event: PropTypes.object.isRequired,
+  event: PropTypes.shape({
+    date: PropTypes.instanceOf(Date).isRequired,
+    title: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+  }).isRequired,
   deleteEvent: PropTypes.func.isRequired,
 };
 
