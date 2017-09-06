@@ -9,7 +9,7 @@ function getDate(date) {
 }
 
 function isPastDay(day) {
-  return moment(day).isBefore(moment());
+  return moment(day).startOf('day').isBefore(moment().startOf('day'));
 }
 
 function formatDate(date) {
